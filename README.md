@@ -1,2 +1,2 @@
-# Maths
+# Misc.
 coding + math
