@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Field Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        code {
+            font-family: Consolas, monospace;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Electric Field Visualization</h1>
+        <p>This code generates a plot illustrating the electric field lines produced by a set of charges distributed on a unit circle. Let's break down the code step by step:</p>
+        
+        <h2>Importing Libraries:</h2>
+        <p>The code begins by importing necessary libraries: NumPy for numerical computations and matplotlib for plotting.</p>
+        
+        <h2>Electric Field Function:</h2>
+        <p><code>E(q, r0, x, y)</code> function computes the electric field vector <code>(Ex, Ey)</code> at a point <code>(x, y)</code> due to a charge <code>q</code> located at position <code>(r0x, r0y)</code>. It uses Coulomb's law to calculate the electric field. The formula used is:</p>
+        <pre><code>Ex = q * (x - r0x) / |r - r0|^3
+Ey = q * (y - r0y) / |r - r0|^3</code></pre>
+        
+        <h2>Grid of Points:</h2>
+        <p>It creates a grid of points in the <code>x</code> and <code>y</code> directions using <code>np.linspace()</code> and <code>np.meshgrid()</code> functions.</p>
+        
+        <h2>Charges:</h2>
+        <p>It generates <code>nq</code> charges distributed equally spaced on a unit circle. Each charge alternates in sign between positive and negative. The charges are stored as tuples containing the charge value and its position on the unit circle.</p>
+        
+        <h2>Electric Field Calculation:</h2>
+        <p>It calculates the electric field vectors <code>(Ex, Ey)</code> at each point on the grid due to all the charges. It iterates through the charges, computes the contribution of each charge to the electric field using the <code>E()</code> function, and accumulates the results.</p>
+        
+        <h2>Plotting Streamlines:</h2>
+        <p>It plots the streamlines of the electric field using <code>ax.streamplot()</code>. The color of the streamlines is determined by the magnitude of the electric field.</p>
+        
+        <h2>Plotting Charges:</h2>
+        <p>Initially, the code contains commented-out lines to add filled circles representing the charges themselves. However, these lines are not executed in the provided code.</p>
+        
+        <h2>Plot Customization:</h2>
+        <p>It sets labels, limits, and aspect ratio for the plot.</p>
+        
+        <h2>Displaying Plot:</h2>
+        <p>Finally, it displays the plot.</p>
+        
+        <p>This code essentially visualizes the electric field lines produced by a set of charges arranged in a circle, demonstrating how the electric field behaves around charged objects. The density of field lines indicates the strength of the electric field, with more lines in regions of higher field strength.</p>
+    </div>
+</body>
+</html>
